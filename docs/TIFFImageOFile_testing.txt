@@ -1,0 +1,66 @@
+Function			     Status
+=================================================
+TIFFImageOFile                       - correct
+~TIFFImageOFile                      - correct
+updateColormap                       - correct
+writeColormap                        - not tested
+putPixel                             - not tested
+putScanline(GreyPixel)               - correct
+putScanline(HSVPixel)                - not tested
+putScanline(RGBPixel)
+   - Photometric == PHOTO_PALETTE    - correct
+   - Photometric == PHOTO_RGB        - correct
+   - Photometric == Grey             - correct
+putRawPixel                          - not tested
+putRawScanline                       - correct
+putRawRectangle                      - correct
+getOptimalRectangle		     - correct
+setPalette                           - correct
+setCompression                       - correct
+setXResolution                       - correct
+setYResolution                       - correct
+setResUnits                          - correct
+setSubfileType                       - correct
+setPlanarConfig                      - correct
+setRowsPerStrip                      - correct
+setImageDescription                  - correct
+setDateTime                          - correct
+setBitsPerSample                     - correct
+setSamplesPerPixel                   - correct
+setCopyright			     - correct
+setDocumentName			     - correct
+setMake				     - correct
+setModel			     - correct
+setOrientation			     - correct
+setMinSampleValue		     - correct
+setMaxSampleValue		     - correct
+setPageName			     - correct
+setPageNumber			     - correct
+setSoftware			     - correct
+setArtist			     - correct
+setHostComputer			     - correct
+setTag(uint32)			     - correct
+setTag(uint16)			     - correct
+setTag(float)			     - correct
+setTag(float*)			     - correct
+setTag(uint16*)			     - correct
+setTag(u_char**)		     - correct
+setTag(std::string)		     - correct
+setSubfileBit			     - correct
+setWidthBit			     - correct
+setLengthBit			     - correct
+setSamplesPixelBit		     - correct
+setBitsSampleBit		     - correct
+setCompressionBit		     - correct
+setPhotometricBit		     - correct
+setXResBit			     - correct
+setYResBit			     - correct
+setResUnitBit			     - correct
+setRowsStripBit			     - correct
+setColormapBit			     - correct
+setImageDescriptBit		     - correct
+setDateTimeBit			     - correct
+setPlanarConfigBit		     - correct
+
+
+

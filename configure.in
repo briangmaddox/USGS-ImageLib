@@ -1,0 +1,54 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(AbstractPixel.h)
+AC_CONFIG_AUX_DIR(`pwd`/config)
+
+dnl Changed here since my stuff lives under the root of my home dir
+AC_PREFIX_DEFAULT($HOME)
+
+dnl Define C++ as the language to use
+AC_LANG_CPLUSPLUS
+
+dnl Check for the machine type
+AC_CANONICAL_HOST
+
+dnl Add our arguments
+AC_ARG_ENABLE(debug, [  --enable-debug	  Generate debugging information during compilation.], enable_debug=yes,enable_debug=no)
+AC_SUBST(enable_debug)
+
+AC_ARG_ENABLE(noucharread, [  --enable-noucharread    Define for ifstream with no unsigned char read.], enable_noucharread=yes,enable_noucharread=no)
+AC_SUBST(enable_noucharread)
+
+dnl Add the directories that hold the other libraries in case not in system
+AC_ARG_WITH(tiffdir, [  --with-tiffdir=dir      Use TIFF library in directory dir],[TIFFINC=$withval])
+if test "$TIFFINC" ; then
+  TIFF_INC="-I${TIFFINC}"
+else
+  TIFF_INC=""
+fi
+AC_SUBST(TIFF_INC,$TIFF_INC) 
+
+AC_ARG_WITH(geotiffdir, [  --with-geotiffdir=dir   Use GeoTIFF library in directory dir],[GEOTIFFINC=$withval])
+if test "$GEOTIFFINC" ; then
+  GEOTIFF_INC="-I${GEOTIFFINC}"
+else
+  GEOTIFF_INC=""
+fi
+AC_SUBST(GEOTIFF_INC,$GEOTIFF_INC)
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_PROG_CXX
+
+dnl Checks for libraries.
+
+dnl Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS([vector sstream string fstream new exception],,
+[echo "Unable to locate all necessary headers.  Consult config.log for details"; exit 1])
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+
+dnl Checks for library functions.
+
+AC_OUTPUT(Makefile)

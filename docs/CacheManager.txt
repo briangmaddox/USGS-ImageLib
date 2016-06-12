@@ -1,0 +1,30 @@
+   The CacheManager class is something I'm adding but not really sure
+that I need it.  Basically, it will take a pointer to an Image object
+and create a scanline cache for the user.  It will probably allow you
+to configure whether you want a raw scanline, a RGB struct scanline,
+or a palettized scanline.
+
+   As to why I'm not sure I need it, well, I'm not sure I need it in
+addition to what the operating system provides.  For example, in
+working on the interpolated projection project, even repeated calls to
+getting the raw XY pixel from RawGreyIDataHandler take an extremely
+small amount of runtime (for example, under 5 percent and under of the
+total run time and took around 0.52 microseconds per call).  Modern
+operating systems provide some sort of file caching mechanism
+themselves.  Add to this the hardware cache that the disk drives build
+in, and you get the idea.  I'm not convinced that going through the
+motions to cache scanline data won't be as fast as or slower than
+what's already provided by the OS.
+
+Design
+======
+   The CacheManager will have a ImageIFile pointer internally.  This
+will resolve at runtime to whatever object it's pointing at.  The
+basic idea is that there will be a user specified number of scanlines
+to cache.  There may also be an option to select whether to cache
+above the request, below, or both above and below, which will make
+sense later on.
+
+   For example, the user sets it up to cache 20 scanlines and then
+requests scanline 0.  The CacheManager will cache scanlines 0 through
+19 if not already in the cache.  

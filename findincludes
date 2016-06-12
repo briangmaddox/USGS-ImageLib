@@ -1,0 +1,13 @@
+#!/bin/sh
+for file in *.h
+do
+echo $file
+grep include $file
+done
+
+for file in *.cpp
+do
+	echo $file
+	grep include $file
+done
+

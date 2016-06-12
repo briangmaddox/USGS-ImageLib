@@ -1,0 +1,13 @@
+Function				Status
+===============================================
+setPhotometric				- correct
+setWidth				- correct
+setHeight				- correct
+setBitsPerSample			- correct
+getPhotometric				- correct
+getWidth				- correct
+getHeight				- correct
+getBitsPerSample			- correct
+validateRow				- correct
+validateXY				- correct
+setBytesPerPixel			- correct

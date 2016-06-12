@@ -1,0 +1,55 @@
+   Okie, this is some kind of design doc for the Image Library.  Basically,
+just gives me a place to put stuff in writing since I tend to forget some
+things :)
+
+   All of the input/output functions are void.  If an error occurs, an 
+exception is thrown (ie, bounding error, read error, write error).
+This was a conscious design decision and was done so that if a user
+were writing file conversion software, for example, the get and put
+routines could just be put into a try loop instead of checking the
+returns after each call.  This allows for faster access.
+
+   The inheritance hierarchy should be fairly obvious (if not, check
+out the postscript diagram in this directory).  The original image
+library had some classes which derived both from ImageIFile and
+ImageOFile for those formats which supported reading and writing.
+Since the number of these formats are fairly small (and because I've
+never been a big fan of multiple inheritance), those classes will not
+be included here.  If someone wants them, they could create them
+fairly easily.
+
+   In some cases I'm throwing, catching, and rethrowing the same
+exception.  This could have been done better, but as exceptions are,
+well, exceptional cases and not the norm, I figure people can deal.
+Besides, if one's thrown, you have bigger problems than this.
+
+   You might be puzzled why I do something along the lines of:
+      if (!(foo = new(std::nothrow) unsigned char[x]))
+        throw std::bad_alloc();
+
+   This is because I wanted the library to be portable.  If you read
+the online docs in Visual C++, you'll find where Microsoft admits that
+they don't throw bad_alloc as they should (but they tell you how you
+can by redefining new_handler or some other such nonsense.  I didn't
+want callers to have to do that here so I pass in nothrow so new
+returns NULL like it did in the olden days.  It's ugly, but it also
+works under Visual C++ and gcc so I'm happy with it.
+
+   You'll also find spots where I cast an unsigned char* to a char* in
+some of the fstream read calls.  This is also a Visual thing.  Visual
+basically gives you the IO all templated to char's and not unsigned
+chars.  You could derive an unsigned char version, but I didn't care
+to so did it this way.  If case you say it doesn't work, it does, I've
+tested it.  And as to why it works, well, at the lowest level, each
+byte will have the same representation in memory.  It's when you get
+it as a char or unsigned char that things change.  The read call
+sticks it into the array thinking it's a char, but it's actually an
+unsigned char array so all the data values are still ok.  If ya don't
+believe me, test it yourself ;)
+
+   Some of these classes are basically minor rewrites of their
+original versions redone to fit into the ImageLib and to support
+exception handling (see CRLImageIFile for example).  These were the
+cases where the file format isn't used much anymore so I didn't care
+to add a lot of stuff or to make it "cooler".
+  

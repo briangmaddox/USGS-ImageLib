@@ -1,0 +1,38 @@
+Function                                            Status
+============================================================
+ImageData                                           correct
+ImageData(long int, long int)                       correct
+~ImageData                                          correct
+setWidth                                            correct
+setHeight                                           correct
+setBitsPerSample                                    correct
+setSamplesPerPixel                                  correct
+setPhotometric                                      correct
+setImageType                                        correct
+getWidth                                            correct
+getHeight                                           correct
+getBitsPerSample                                    correct
+getSamplesPerPixel                                  correct
+getPhotometric                                      correct
+getImageType                                        correct
+setHasPallette                                      correct
+unsetHasPallette                                    correct
+hasPallette                                         correct
+good                                                correct
+bad                                                 correct
+noData                                              correct
+failedRead                                          correct
+failedWrite                                         correct
+clear                                               correct
+setNoDataBit                                        correct
+setFailRBit                                         correct
+setFailWBit                                         correct
+setRandomAccessFlags                                correct
+getRandomAccessFlags                                correct
+canReadPixel                                        correct
+canReadScanline                                     correct
+canReadRectangle                                    correct
+canWritePixel                                       correct
+canWriteScanline                                    correct
+canWriteRectangle                                   correct
+

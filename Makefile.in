@@ -1,0 +1,112 @@
+SHELL			=	/bin/sh
+
+prefix			=	@prefix@
+exec_prefix		=	@exec_prefix@
+host_os			=	@host_os@
+srcdir			=	@srcdir@
+top_srcdir		=	@top_srcdir@
+enable_debug		=	@enable_debug@
+enable_noucharread	=	@enable_noucharread@
+
+# Where to find includes for libraries that Image depends on.
+INCPATHS = -I$(prefix)/include @TIFF_INC@ @GEOTIFF_INC@
+
+# Where to install Image's include files.
+INCDEST = $(prefix)/include/ImageLib
+
+# Where to install Image's library.
+LIBDEST = $(prefix)/lib
+
+ifeq ($(enable_debug),yes)
+DEBUG= -g -Wall
+else
+DEBUG= -O2
+endif
+
+ifeq ($(enable_noucharread), yes)
+NOUCHAR=-DNOUCHARREAD
+else
+NOUCHAR=
+endif
+
+CC= @CC@
+CXX= @CXX@
+CXXFLAGS= $(NOUCHAR) $(DEBUG) $(INCPATHS)
+RANLIB=ranlib
+
+SRCS=	ImageCommon.cpp			\
+	GreyPalette.cpp             	\
+	RGBPalette.cpp			\
+	GreyPixel.cpp			\
+	RGBPixel.cpp			\
+	HSVPixel.cpp			\
+	ImageException.cpp		\
+	Palette.cpp			\
+	RawDataHandler.cpp		\
+	RawGreyIDataHandler.cpp		\
+	RawGreyODataHandler.cpp		\
+	RawRGBIDataHandler.cpp		\
+	RawIDataHandler.cpp		\
+	RawODataHandler.cpp		\
+	ImageData.cpp			\
+	ImageFile.cpp			\
+	ImageIFile.cpp			\
+	ImageOFile.cpp			\
+	CRLImageIFile.cpp		\
+	DOQImageIFile.cpp		\
+	DOQ_RecImageIFile.cpp		\
+	GreyImageIFile.cpp		\
+	TIFFImageOFile.cpp		\
+	GeoTIFFImageOFile.cpp		\
+	GeoTIFFImageIFile.cpp		\
+	TIFFImageIFile.cpp		\
+	SPCSMapper.cpp			\
+	CacheManager.cpp		\
+	LRUNode.cpp			\
+	LRUCacheManager.cpp		\
+	PNGImageIFile.cpp		\
+	JPEGImageIFile.cpp
+
+OBJS=$(SRCS:.cpp=.o)
+
+.SUFFIXES: .o .cpp
+
+# Suffix rules
+.cpp.o:
+	$(CXX) $(CXXFLAGS) -c $<
+
+all: libImageLib.a
+	@echo "libImageLib.a successfully built."
+
+libImageLib.a: $(OBJS)
+	ar rsu libImageLib.a $(OBJS)
+
+install: libImageLib.a
+	$(top_srcdir)/config/mkinstalldirs $(INCDEST)
+	$(top_srcdir)/config/mkinstalldirs $(LIBDEST)
+	cp *.h $(INCDEST)
+	cp libImageLib.a $(LIBDEST)
+
+clean::
+	rm -f libImageLib.a core *~ $(OBJS)
+
+distclean: clean
+	rm -f Makefile config.h config.status config.cache config.log
+
+uninstall:
+	rm -rf $(INCDEST)
+	rm -f $(LIBDEST)/libImageLib.a
+
+# Automatically rerun configure if the .in files have changed
+$(srcdir)/configure:	configure.in
+	cd $(srcdir) && autoconf
+
+$(srcdir)/stamp-h:  config.status
+	./config.status
+
+$(srcdir)/Makefile: Makefile.in config.status
+	./config.status
+
+$(srcdir)/config.status: configure
+	./config.status --recheck
+

@@ -1,0 +1,6 @@
+Function                                            Status
+============================================================
+ImageIFile                                          correct
+ImageIFile(std::string)                             correct
+~ImageIFile                                         correct
+

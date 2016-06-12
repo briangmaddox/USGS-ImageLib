@@ -1,0 +1,11 @@
+Function                                        Status
+=======================================================
+ImageFile                                       correct
+ImageFile(string, long, long)                   correct
+ImageFile(string)                               correct
+~ImageFile                                      correct
+setFileName                                     correct
+getFileName                                     correct
+validateRow                                     correct
+validateXY                                      correct
+

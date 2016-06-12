@@ -1,0 +1,12 @@
+   This is a C++ Image library.  The purpose of this library is to
+abstract the low level interfaces of each different image format by
+providing a common interface to image data.  Some classes also have
+functions to return metadata specific to that format (such as the
+GeoTIFF zone information).
+
+   This library depends on several other libraries already existing on
+your system.  These are the libraries which actually deal with the low
+level interface to the formats.  Each of these is also out in the
+public domain.  They are libjpeg 6b, libtiff, libgif, libpng,
+libgeotiff, and libz.  You should have each of these installed before
+attempting to compile this software.

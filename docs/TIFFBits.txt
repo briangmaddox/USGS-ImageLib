@@ -1,0 +1,21 @@
+TIFF Bits:
+
+Bit        Meaning
+----       --------
+ 0         Width Set
+ 1         Length Set
+ 2         Subfile Set
+ 3         Bits/Sample Set
+ 4         Samples/Pixel Set
+ 5         X-Resolution Set
+ 6         Y-Resolution Set
+ 7         Resolution Unit Set
+ 8         Rows/Strip Set
+ 9         Photometric Set
+10
+11
+12
+13
+14
+15
+16

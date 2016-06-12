@@ -1,0 +1,40 @@
+TIFFImageIFile Functions Tested:
+TIFFImageIFile                                 - correct
+~TIFFImageIFile                                - correct
+getCompression                                 - correct
+getXResolution                                 - correct
+getYResolution                                 - correct
+getResUnits                                    - correct
+getSubfileType                                 - correct
+getPlanarConfig                                - correct
+getRowsPerStrip                                - correct
+getImageDescription                            - correct
+getDateTime                                    - correct
+getPallette                                    - correct
+getRawPixel                                    - correct
+getRawScanline                                 - correct
+getRawRectangle                                - not tested
+getPixel
+   - Photometric == PHOTO_PALETTE              - not tested
+   - Photometric == PHOTO_GREY                 - not tested
+   - Photometric == PHOTO_RGB                  - not tested
+getScanline(GreyPixel)                         - correct
+getScanline(HSVPixel)                          - not tested
+getScanline(RGBPixel)
+   - Photometric == PHOTO_PALETTE              - correct
+   - Photometric == PHOTO_RGB                  - correct
+   - Photometric == PHOTO_GREY                 - correct
+getRectangle(GreyPixel)                        - not tested
+getRectangle(HSVPixel)                         - not tested
+getRectangle(RGBPixel)
+   - Photometric == PHOTO_PALETTE              - not tested
+   - Photometric == PHOTO_GREY                 - not tested
+   - Photometric == PHOTO_RGB                  - not tested
+getRawRGBPixel                                 - not tested
+getRawRGBScanline
+   - Photometric == PHOTO_RGB                  - not tested
+   - Photometric == PHOTO_GREY                 - not tested
+   - Photometric == PHOTO_PALETTE              - not tested
+getRawRGBRectangle                             - not tested
+getOptimalRectangle                            - correct
+

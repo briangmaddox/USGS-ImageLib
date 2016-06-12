@@ -1,0 +1,131 @@
+Function					Status
+==========================================================
+DOQImageIFile
+  - Greyscale Image				- correct
+  - RGB Image					- correct
+~DOQImageIFile					- correct
+getQuadName					- correct
+getQuadrant					- correct
+getWestHour					- correct
+getWestMinute					- correct
+getWestSecond					- correct
+getEastHour					- correct
+getEastMinute					- correct
+getEastSecond					- correct
+getNorthHour					- correct
+getNorthMinute					- correct
+getNorthSecond					- correct
+getSouthHour					- correct
+getSouthMinute					- correct
+getSouthSecond					- correct
+getProdDate					- correct
+getRasterOrder					- correct
+getBandOrganization				- correct
+getNumBandContents				- correct
+getBandContent					- correct
+getBitsPerPixel					- correct
+getSamples					- correct
+getLines					- correct
+getHorizontalDatum				- correct
+getHorizontalCoordinateSystem			- correct
+getCoordinateZone				- correct
+getHorizontalUnits				- correct
+getHorizontalResolution				- correct
+getXOrigin					- correct
+getYOrigin					- correct
+getSecondaryXOrigin				- correct
+getSecondaryYOrigin				- correct
+getNumNations					- correct
+getNation					- correct
+getNumStates					- correct
+getState					- correct
+getNWQuadX					- correct
+getNWQuadY					- correct
+getNEQuadX					- correct
+getNEQuadY					- correct
+getSEQuadX					- correct
+getSEQuadY					- correct
+getSWQuadX					- correct
+getSWQuadY					- correct
+getSecNWQuadX					- correct
+getSecNWQuadY					- correct
+getSecNEQuadX					- correct
+getSecNEQuadY					- correct
+getSecSEQuadX					- correct	
+getSecSEQuadY					- correct
+getSecSWQuadX					- correct	
+getSecSWQuadY					- correct
+getRMSE						- correct
+getImageSource					- correct
+getNumImageSources				- correct
+getSourceImageID				- correct
+getSourceImageDate				- correct
+getSourceDEMDate				- correct
+getAgency					- correct
+getProducer					- correct
+getProductionSystem				- correct
+getCompression					- correct
+getStandardVersion				- correct
+getMetaDataDate					- correct
+getDataSize					- correct
+getByteCount					- correct
+getPallette					- not tested
+getScanline(GreyPixel)				- correct
+getScanline(RGBPixel)				- correct
+getScanline(HSVPixel)				- correct
+getPixel					- not tested
+getRectangle(RGBPixel)				- not tested
+getRectangle(GreyPixel)				- not tested
+getRectangle(HSVPixel)				- not tested
+getRawScanline					- correct
+getRawPixel					- not tested
+getRawRectangle					- not tested
+getRawRGBScanline				- correct
+getRawRGBPixel					- correct
+getRawRGBRectangle				- correct
+getOptimalRectangle				- correct
+readBuffer					- correct
+returnToken					- correct
+setQuadName					- correct
+setQuadrant					- correct
+setWestLongitude				- correct
+setEastLongitude				- correct
+setNorthLatitude				- correct
+setSouthLatitude				- correct
+setProdDate					- correct
+setRasterOrder					- correct
+setBandOrganization				- correct
+setBandContent					- correct
+setBitsPerPixel					- correct
+setSamplesLines					- correct
+setHorizontalDatum				- correct
+setHorizontalCoordinateSystem			- correct
+setCoordinateZone				- correct
+setHorizontalUnits				- correct
+setHorizontalResolution				- correct
+setSecondaryHorizontalDatum			- correct
+setOrigins					- correct
+setSecondaryOrigins				- correct
+setNation					- correct
+setStates					- correct
+setNWQuadCorners				- correct
+setNEQuadCorners				- correct
+setSEQuadCorners				- correct
+setSWQuadCorners				- correct
+setSecondaryNWQuadCorner			- correct
+setSecondaryNEQuadCorner			- correct
+setSecondarySEQuadCorner			- correct
+setSecondarySWQuadCorner			- correct
+setRMSE						- correct
+setImageSource					- correct
+setSourceImageID				- correct
+setSourceImageDate				- correct
+setSourceDEMDate				- correct
+setAgency					- correct
+setProducer					- correct
+setProductionSystem				- correct
+setCompression					- correct
+setStandardVersion				- correct
+setMetaDataDate					- correct
+setDataSize					- correct
+setByteCount					- correct

@@ -1,0 +1,8 @@
+Function                                   Status
+===================================================
+cmp_nocase                                 correct
+MAX                                        correct
+MIN                                        correct
+RGBtoHSV                                   testing
+HSVtoRGB                                   testing
+

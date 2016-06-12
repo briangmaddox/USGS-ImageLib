@@ -1,0 +1,6 @@
+Function                                Status
+===============================================
+ImageOFile                              correct
+ImageOFile(string, long long)           correct
+~ImageOFile                             correct
+

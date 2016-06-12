@@ -1,0 +1,4 @@
+o Add helper functions to convert between the supported colorspaces.
+o Finish up JPEGImageIFile
+o Only allow greyscale or RGB get functions.  The user can use the conversions
+  routines to go to others like HSV.

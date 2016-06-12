@@ -1,0 +1,19 @@
+Function				Status
+===============================================
+getPallette				- not tested
+getScanline
+  - RGBPixel				- correct
+  - HSVPixel				- correct
+  - GreyPixel				- correct
+getPixel				- not tested
+getRectangle
+  - RGBPixel				- not tested
+  - HSVPixel				- not tested
+  - GreyPixel				- not tested
+getRawScanline				- correct
+getRawPixel				- not tested
+getRawRectangle				- not tested
+getRawRGBPixel				- not tested
+getRawRGBScanline			- not tested
+getRawRGBRectangle			- not tested
+getOptimalRectangle			- correct
